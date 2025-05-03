@@ -19,4 +19,12 @@ class Attendance(models.Model):
 
     class Meta:
         unique_together = ('student', 'date')
+class Exam(models.Model):
+    name = models.CharField(max_length=100)
+    date = models.DateField()
+    subject = models.CharField(max_length=100)
+    class_name = models.CharField(max_length=50)
+
+    def __str__(self):
+        return f"{self.name} - {self.subject}"
 

@@ -1,5 +1,6 @@
 from django.db import models
 
+
 # Create your models here.
 class Student(models.Model):
     name = models.CharField(max_length=100)
@@ -27,4 +28,12 @@ class Exam(models.Model):
 
     def __str__(self):
         return f"{self.name} - {self.subject}"
+class Mark(models.Model):
+    student = models.ForeignKey(Student, on_delete=models.CASCADE)
+    exam = models.ForeignKey(Exam, on_delete=models.CASCADE)
+    marks_obtained = models.FloatField()
+
+    class Meta:
+        unique_together = ('student', 'exam')
+
 

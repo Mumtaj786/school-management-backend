@@ -1,3 +1,13 @@
 from django.db import models
 
 # Create your models here.
+class Student(models.Model):
+    name = models.CharField(max_length=100)
+    roll_number = models.CharField(max_length=20, unique=True)
+    email = models.EmailField()
+    class_name = models.CharField(max_length=50)
+
+class Teacher(models.Model):
+    name = models.CharField(max_length=100)
+    subject = models.CharField(max_length=100)
+    email = models.EmailField()

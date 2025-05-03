@@ -40,6 +40,17 @@ INSTALLED_APPS = [
     'core',
 ]
 
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'school_db',
+        'USER': 'root',
+        'PASSWORD': 'tajMySQL786***',
+        'HOST': 'localhost',
+        'PORT': '3306',
+    }
+}
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
